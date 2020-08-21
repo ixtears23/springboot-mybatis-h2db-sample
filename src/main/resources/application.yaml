@@ -1,0 +1,31 @@
+spring:
+  datasource:
+#    url: jdbc:h2:mem:testdb  # memory
+    url: jdbc:h2:file:C:/data/sample  # 물ㄹ파
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: embedded
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+server:
+  port: 8888
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com:
+      example:
+        demo: TRACE
+    org:
+      mybatis: TRACE
+      apache:
+        ibatis: TRACE
+      springframework:
+        jdbc: DEBUG
+
