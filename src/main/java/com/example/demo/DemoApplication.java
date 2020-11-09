@@ -13,23 +13,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.example.demo.mappers")
 public class DemoApplication implements ApplicationRunner {
 
-	private final AnnotationBoardMapper boardMapperAnnotation;
-	private final XMLBoardMapper xmlBoardMapper;
-
-	public DemoApplication(AnnotationBoardMapper boardMapperAnnotation, XMLBoardMapper xmlBoardMapper) {
-		this.boardMapperAnnotation = boardMapperAnnotation;
-		this.xmlBoardMapper = xmlBoardMapper;
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		Board board1 = boardMapperAnnotation.findById(1);
-		Board board2 = xmlBoardMapper.findById(2);
-		System.out.println(String.format("게시판ID: %s\t내용: %s", board1.getId(), board1.getContent()));
-		System.out.println(String.format("게시판ID: %s\t내용: %s", board2.getId(), board2.getContent()));
+		System.out.println("===============IBDATA DEVDAY SAMPE===============");
 	}
 }

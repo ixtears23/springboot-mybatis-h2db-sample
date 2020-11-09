@@ -1,31 +1,43 @@
 spring:
+  devtools:
+    livereload:
+      enabled: true
   datasource:
-#    url: jdbc:h2:mem:testdb  # memory
-    url: jdbc:h2:file:C:/data/sample  # 물ㄹ파
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-    initialization-mode: embedded
+#    url: jdbc:h2:mem:testdb  # DB data를 Memory에 저장. 서버를 내리면 다 날라가 버림.
+    url: jdbc:h2:file:C:/data/sample  # DB dat를 날리고 싶지 않고 local에 저장하고 싶다면 이걸 사용.
+    driver-class-name: org.h2.Driver  # h2 Db를 쓴다는 이야기임.
+    username: sa  # h2DB를 사용 시 자동으로 브라우저를 지원해 줌. 그 때 사용하는 로그인 ID
+    password: # 공백이므로 비밀번호 입력하지 않고 로그인 가능
+    initialization-mode: embedded # 찾아보시길..
   h2:
     console:
-      enabled: true
-      path: /h2-console
+      enabled: true # h2 DB 브라우저 사용하겠다.
+      path: /h2-console # h2 DB 브라우저 경로
 server:
-  port: 8888
+  port: 8888  # 스프링부트가 올라가는 서버 포트. 8888이 내 PC에서 사용중이라면 사용하지 않는 임의 포트 상관 없음.
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.example.demo.entity
+  mapper-locations: classpath:mapper/*.xml  # mybatis mapper xml위치
+  type-aliases-package: com.example.demo.entity # mybatis 에서 사용하기 위한 alias 생성. BoardMapper.xml 을 확인하면 resultType에 패키지명이 빠진 이름만 들어가 있는 걸 확인할 수 있음.
   configuration:
-    map-underscore-to-camel-case: true
-logging:
+    map-underscore-to-camel-case: true  # 영어 그대로 camelcase
+
+
+
+# 아래는 로그 레벨을 지정했을 뿐.
+# 한마디로 logger.debug 한 코드가 해당 패키지에 존재하면 console에 로그 확인가능.
+# logger 레벨을 info로 설정한 경우 logger.debug는 찍히지 않음.
+
+logging:  # logger는 패키지 명으로 작성한다. 탭으로 띄우지 않는다. 띄어쓰기 2칸으로 계층 구조 형성.
   level:
     com:
       example:
-        demo: TRACE
+        demo:
+          service: INFO # com.example.demo.service 패키지 아래에 있는 java 코드의 로거 레벨을 INFO로 하겠다.
+          mappers: DEBUG # com.example.demo.mappers 패키지 아래에 있는 java 코드의 로거 레벨을 DEBUG로 하겠다.
     org:
-      mybatis: TRACE
+      mybatis: TRACE # org.mybatis 패키지 아래에 있는 java 코드의 로거 레벨을 TRACE로 하겠다.
       apache:
-        ibatis: TRACE
+        ibatis: TRACE # org.apache.ibdata 패키지 아래에 있는 java 코드의 로거 레벨을 TRACE로 하겠다.
       springframework:
-        jdbc: DEBUG
+        jdbc: DEBUG # org.springframework.jdbc 패키지 아래에 있는 java 코드의 로거 레벨을 DEBUG로 하겠다.
 
