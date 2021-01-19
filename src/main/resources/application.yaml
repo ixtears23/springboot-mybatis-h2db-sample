@@ -8,7 +8,7 @@ spring:
     driver-class-name: org.h2.Driver  # h2 Db를 쓴다는 이야기임.
     username: sa  # h2DB를 사용 시 자동으로 브라우저를 지원해 줌. 그 때 사용하는 로그인 ID
     password: # 공백이므로 비밀번호 입력하지 않고 로그인 가능
-    initialization-mode: embedded # 찾아보시길..
+    initialization-mode: embedded # 값으로는 always, embedded, never -- always: 항상 초기화, embedded: h2메모리db인 경우만 초기화, never: 초기화 하지 않음.
   h2:
     console:
       enabled: true # h2 DB 브라우저 사용하겠다.
