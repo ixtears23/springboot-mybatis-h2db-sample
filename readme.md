@@ -1,4 +1,4 @@
-# Ibdata Devday backend Sample Project
+# pringboot-mybatis-h2db-sample
 
 해당문서는 markdown 형식으로 작성 됐습니다.
 ref : [markdown guide](https://www.markdownguide.org/)
