@@ -40,3 +40,6 @@ ref : [h2 Database](https://www.h2database.com/)
 -> 동작한다. @Transactional 에 Exception 발생 시 Rollback 시키게 하니 Rollback 됨  
 2. @Transactional 을 붙이지 않으면, 중간에 Exception이 발생해도 Commit 될까?  
 -> DB Update 문 실행 후 Exception을 발생시켰는데도 Commit 되는 것 확인  
+3. Transaction 의 isolation 레벨을 Isolation.READ_UNCOMMITTED 로 했을 때 정말 Commit 하지 않은 것을 읽을까?  
+-> Commit하지 않은 정보를 읽어온다.  
+4. @Transactional이 선언되지 않은 메서드에서 @Transactional이 선언된 메서드 호출시 Transaction이 적용될까?  

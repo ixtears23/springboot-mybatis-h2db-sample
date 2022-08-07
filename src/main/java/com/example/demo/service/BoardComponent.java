@@ -24,10 +24,23 @@ public class BoardComponent implements BoardService {
         return boardMapperAnnotation.findById(id);
     }
 
+    /**
+     * 시나리오
+     * log.info에 debug 포인트를 걸고,
+     * h2-console에서 Commit하지 않고 Update 했을 경우 정말 Commit하지 않은 정보를 읽어오는지 확인
+     */
+    @Transactional(readOnly = true, isolation = Isolation.READ_UNCOMMITTED)
     @Override
     public Board findBoardInXMl(int id) {
         log.info("findBoardInXMl - id : {}", id);
-        return boardMapper.findById(id);
+        try {
+            Thread.sleep(10000);
+        } catch (Exception ex) {
+            log.error(ex.getMessage(), ex);
+        }
+        final Board board = boardMapper.findById(id);
+        log.info("board ::: {}", board);
+        return board;
     }
 
     @Override
