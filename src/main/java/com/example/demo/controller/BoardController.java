@@ -1,7 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Board;
-import com.example.demo.service.BoardServiceImpl;
+import com.example.demo.service.BoardService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,30 +11,30 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class BoardController {
 
-    private final BoardServiceImpl boardServiceImpl;
+    private final BoardService boardService;
 
-    BoardController(BoardServiceImpl boardServiceImpl) {
-        this.boardServiceImpl = boardServiceImpl;
+    BoardController(@Qualifier("boardComponent") BoardService boardService) {
+        this.boardService = boardService;
     }
 
     @GetMapping("/{id}")
     public @ResponseBody Board findBoardInAnnotation(@PathVariable("id") int id) {
-        return boardServiceImpl.findBoardInAnnotation(id);
+        return boardService.findBoardInAnnotation(id);
     }
 
     @GetMapping
     public ResponseEntity<Board> findBoardInXML(@RequestParam int id) {
-        return new ResponseEntity<>(boardServiceImpl.findBoardInXMl(id), HttpStatus.OK);
+        return new ResponseEntity<>(boardService.findBoardInXMl(id), HttpStatus.OK);
     }
 
     @PutMapping
     public void createBoard(@RequestBody Board board) {
-        boardServiceImpl.insertBoard(board.getContent());
+        boardService.insertBoard(board.getContent());
     }
 
     @PatchMapping
     public void updateBoard(@RequestBody Board board) {
-        boardServiceImpl.updateBoard(board);
+        boardService.updateBoard(board);
     }
 
 }

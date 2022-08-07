@@ -6,18 +6,13 @@ ref : [markdown guide](https://www.markdownguide.org/)
 
 ## 실행방법
 
-
-
 ## 사용된 기술
 - SpringBoot
 - mybatis
 - lombock
 - h2 Database
 
-
 ### SpringBoot
-
-
 
 ### Mybatis
 Mybatis를 사용했지만 그 외의 다른 기술을 사용해도 상관 없음.
@@ -37,3 +32,11 @@ ref : [h2 Database](https://www.h2database.com/)
 
 개발 툴의 사용은 자유롭게 사용가능. 예) VSCode, Eclipse, Intellij 등
 해당 문서는 가이드일 뿐.
+
+---
+
+### Test
+1. Component 도 @Transactional 이 동작하는지 확인  
+-> 동작한다. @Transactional 에 Exception 발생 시 Rollback 시키게 하니 Rollback 됨  
+2. @Transactional 을 붙이지 않으면, 중간에 Exception이 발생해도 Commit 될까?  
+-> DB Update 문 실행 후 Exception을 발생시켰는데도 Commit 되는 것 확인  

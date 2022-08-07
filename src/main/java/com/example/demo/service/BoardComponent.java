@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Component
 public class BoardComponent implements BoardService {
-
+    private static final Boolean FORCE_EXCEPTION_WHETHER = Boolean.TRUE;
     private final AnnotationBoardMapper boardMapperAnnotation;
     private final XMLBoardMapper boardMapper;
 
@@ -36,10 +36,16 @@ public class BoardComponent implements BoardService {
         boardMapper.insertBoard(content);
     }
 
+    /**
+     * Component 에도 Transactional 이 동작하는지 확인
+     * Exception을 발생 시켜서 rollback이 되는지 확인
+     * @param board
+     */
     @Override
     public void updateBoard(Board board) {
         log.info("updateBoard - board : {}", board);
         boardMapper.updateBoard(board);
+        if (FORCE_EXCEPTION_WHETHER) throw new RuntimeException();
     }
 
 }
