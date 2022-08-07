@@ -1,6 +1,77 @@
 GET http://localhost:8888/board/1
 Accept: application/json
 
+<> 2022-08-08T022937.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T022919.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T022758.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T022419.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T022239.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T022003.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T021822.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
 <> 2022-08-08T020925.200.json
 
 ###

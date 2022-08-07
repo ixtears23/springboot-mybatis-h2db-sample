@@ -45,3 +45,11 @@ ref : [h2 Database](https://www.h2database.com/)
 4. @Transactional이 선언되지 않은 메서드에서 @Transactional이 선언된 메서드 호출시 Transaction이 적용될까?  
 -> 주입받은 클래스에서는 Transaction이 적용된다.  
 -> 동일한 클래스에 있는 Trnasactional이 붙은 메서드 호출 시에는 Transacion이 동작하지 않는다.  
+5. REPEATABLE READ 격리 테스트 - 시나리오 5초 간격으로 Thread sleep을 걸어서 그 사이에 update 쿼리 실행 이 때 하나의 트랜잭션에 값이 변경되어서는 안된다.  
+-> 하나의 @Transactional 에서는 조회 -> update -> 동일조회 해봤자 두번째 조회시 동일한 데이터가 조회되지 않음 
+-> 하나의 다른 Transaction에서 수정한 데이터를 읽어오지 않는 것을 확인할 수 있음. 정말 똑같은 쿼리 실행 시 똑같은 데이터가 조회 됨
+6. SERIALIZABLE 격리 테스트 - 시나리오 5초 간격으로 Thread sleep(X 조회 쿼리 Timeout을 걸어야 함) 을 걸어서 그 사이에 update 쿼리 실행 이 때 update 쿼리 테이블은 Lock이 걸려서 Update가 실행되어서는 안된다.  
+-> slow 쿼리를 만들려면 시간이 너무 많이 걸려서 다른 DB에서 테스트 하는 것으로!  
+7. Propagation RequiredNew
+-> 개별 트랜잭션 단계로 전파
+
