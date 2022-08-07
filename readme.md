@@ -43,3 +43,5 @@ ref : [h2 Database](https://www.h2database.com/)
 3. Transaction 의 isolation 레벨을 Isolation.READ_UNCOMMITTED 로 했을 때 정말 Commit 하지 않은 것을 읽을까?  
 -> Commit하지 않은 정보를 읽어온다.  
 4. @Transactional이 선언되지 않은 메서드에서 @Transactional이 선언된 메서드 호출시 Transaction이 적용될까?  
+-> 주입받은 클래스에서는 Transaction이 적용된다.  
+-> 동일한 클래스에 있는 Trnasactional이 붙은 메서드 호출 시에는 Transacion이 동작하지 않는다.  

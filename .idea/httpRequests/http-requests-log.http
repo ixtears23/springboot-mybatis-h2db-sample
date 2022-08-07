@@ -1,0 +1,315 @@
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020925.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+<> 2022-08-08T020923.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020916.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020729.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+<> 2022-08-08T020718.500.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020547.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+<> 2022-08-08T020406.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020325.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+<> 2022-08-08T020311.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020308.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "test1"
+}
+
+<> 2022-08-08T020219.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020155.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "우아앗"
+}
+
+<> 2022-08-08T020131.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T020123.200.json
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T015741.200.json
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T015518.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T015458.200.json
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T015357.200.json
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T015300.200.json
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T015107.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T014934.200.json
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T014923.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T014327.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "우아앗"
+}
+
+<> 2022-08-08T014324.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T014238.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "우아앗"
+}
+
+<> 2022-08-08T014236.500.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T014232.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T010356.200.json
+
+###
+
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "우아앗"
+}
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T010255.200.json
+
+###
+
+PUT http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "우아앗"
+}
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T010250.200.json
+
+###
+
+PUT http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "content": "우아앗"
+}
+
+###
+
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+<> 2022-08-08T010236.200.json
+
+###
+
+GET http://localhost:8888/board/1
+Accept: application/json
+
+<> 2022-08-08T010232.200.json
+
+###
+

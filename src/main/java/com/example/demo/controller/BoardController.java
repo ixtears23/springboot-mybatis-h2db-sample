@@ -13,7 +13,7 @@ public class BoardController {
 
     private final BoardService boardService;
 
-    BoardController(@Qualifier("boardComponent") BoardService boardService) {
+    BoardController(@Qualifier("boardServiceImpl") BoardService boardService) {
         this.boardService = boardService;
     }
 

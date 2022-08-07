@@ -22,5 +22,5 @@ Accept: application/json
 
 {
   "id": 1,
-  "content": "우아앗"
+  "content": "test1"
 }

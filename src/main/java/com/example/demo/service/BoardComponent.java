@@ -55,6 +55,7 @@ public class BoardComponent implements BoardService {
      * @param board
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void updateBoard(Board board) {
         log.info("updateBoard - board : {}", board);
         boardMapper.updateBoard(board);
