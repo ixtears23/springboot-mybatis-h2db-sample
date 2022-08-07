@@ -11,4 +11,18 @@
          WHERE ID = #{id}
     </select>
 
+    <insert id="insertBoard">
+        INSERT INTO BOARD (
+            CONTENT
+        ) VALUES (
+            #{content}
+        )
+    </insert>
+
+    <update id="updateBoard" parameterType="board">
+        UPDATE BOARD
+           SET CONTENT = #{content}
+         WHERE ID = #{id}
+    </update>
+
 </mapper>

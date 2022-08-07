@@ -1,0 +1,26 @@
+### 게시물 조회
+GET http://localhost:8888/board/1
+Accept: application/json
+
+### 게시물 조회
+GET http://localhost:8888/board?id=1
+Accept: application/json
+
+### 게시물 등록
+PUT http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "content": "우아앗"
+}
+
+### 게시물 수정
+PATCH http://localhost:8888/board
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "content": "우아앗"
+}

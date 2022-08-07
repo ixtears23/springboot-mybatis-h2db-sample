@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RequestMapping("/board")
 @RestController
 public class BoardController {
 
@@ -15,26 +16,24 @@ public class BoardController {
         this.boardService = boardService;
     }
 
-    /**
-     * http://localhost:8888/board/2
-     * Header
-     *   Content-Type: application/json
-     */
-    @GetMapping("/board/{id}")
+    @GetMapping("/{id}")
     public @ResponseBody Board findBoardInAnnotation(@PathVariable("id") int id) {
         return boardService.findBoardInAnnotation(id);
     }
 
-    /**
-     * http://localhost:8888/board
-     * Header
-     *   Content-Type: application/x-www-form-urlencoded
-     * Body
-     *   key: id
-     *   value: 2
-     */
-    @PostMapping("/board")
+    @GetMapping
     public ResponseEntity<Board> findBoardInXML(@RequestParam int id) {
-        return new ResponseEntity<Board>(boardService.findBoardInXMl(id), HttpStatus.OK);
+        return new ResponseEntity<>(boardService.findBoardInXMl(id), HttpStatus.OK);
     }
+
+    @PutMapping
+    public void createBoard(@RequestBody Board board) {
+        boardService.insertBoard(board.getContent());
+    }
+
+    @PatchMapping
+    public void updateBoard(@RequestBody Board board) {
+        boardService.updateBoard(board);
+    }
+
 }
