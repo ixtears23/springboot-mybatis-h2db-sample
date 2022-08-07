@@ -9,6 +9,6 @@ import lombok.Setter;
 @Builder
 public class Board {
 
-    private String id;
+    private int id;
     private String content;
 }
